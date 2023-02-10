@@ -25,6 +25,9 @@ class _BasketballCounterAppState extends State<BasketballCounterApp> {
 class Counterteam extends StatelessWidget {
   late double height;
   late double width;
+
+  int teamApoints = 0;
+  int teamBpoints = 0;
   @override
   Widget build(BuildContext context) {
     double myheight = MediaQuery.of(context).size.height;
