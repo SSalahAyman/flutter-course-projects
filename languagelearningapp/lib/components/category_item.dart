@@ -14,9 +14,7 @@ class Category extends StatelessWidget {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     return GestureDetector(
-      onTap: () {
-        ontap;
-      },
+      onTap: ontap,
       child: Container(
         width: width,
         height: height * 0.1,
