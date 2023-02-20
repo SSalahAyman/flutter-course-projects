@@ -27,14 +27,14 @@ class Homepage extends StatelessWidget {
         child: Column(
           children: [
             Category(
-              text: "numbers",
-              color: Color(0xfff99430),
-              ontap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Numberspage();
-                }));
-              },
-            ),
+                text: "numbers",
+                color: Color(0xfff99430),
+                ontap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return Numberspage();
+                  }));
+                }),
             Category(
               text: 'Family Members',
               color: Color(0xff517f31),
