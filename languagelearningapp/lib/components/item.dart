@@ -1,4 +1,6 @@
+// import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 import '../models/number.dart';
 
@@ -7,6 +9,13 @@ class Item extends StatelessWidget {
   final Number number;
   static late double width;
   static late double height;
+
+  final List<String> soundcategories = const [
+    'assets/sounds/numbers/',
+    'assets/sounds/colors/',
+    'assets/sounds/family_members/',
+    'assets/sounds/phrases/'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,15 +56,28 @@ class Item extends StatelessWidget {
             flex: 1,
           ),
           Padding(
-            padding: EdgeInsets.only(right: width * 0.03),
-            child: Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 29,
-            ),
-          )
+              padding: EdgeInsets.only(right: width * 0.03),
+              child: IconButton(
+                  onPressed: () {
+                    AudioCache player =
+                        AudioCache(prefix: 'assets/sounds/numbers/');
+                    player.play(number.sound);
+                  },
+                  icon: Icon(
+                    Icons.play_arrow,
+                    color: Colors.white,
+                    size: 29,
+                  )))
         ],
       ),
     );
+  }
+
+  List<String> getsoundcategories(List<String> soundcategories) {
+    List<String> soundslist = [];
+    for (int i = 0; i < soundslist.length; i++) {
+      soundslist.add(soundcategories[i]);
+    }
+    return soundslist;
   }
 }

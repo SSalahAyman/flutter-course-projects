@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
-  String? text;
-  Color? color;
-  VoidCallback? ontap;
-  late double width;
-  late double height;
+  final String? text;
+  final Color? color;
+  final VoidCallback? ontap;
+  static late double width;
+  static late double height;
 
-  Category({this.text, this.color, this.ontap});
+  const Category({this.text, this.color, this.ontap});
 
   @override
   Widget build(BuildContext context) {

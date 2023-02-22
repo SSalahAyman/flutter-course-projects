@@ -18,43 +18,53 @@ class Numberspage extends StatelessWidget {
     Number(
         image: "assets/images/numbers/number_one.png",
         enName: "one",
-        jpName: "ichi"),
+        jpName: "ichi",
+        sound: 'number_one_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_two.png",
         enName: "two",
-        jpName: "ichi"),
+        jpName: "Ni",
+        sound: 'number_two_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_three.png",
         enName: "three",
-        jpName: "ichi"),
+        jpName: "San",
+        sound: 'number_three_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_four.png",
         enName: "four",
-        jpName: "ichi"),
+        jpName: "Shi",
+        sound: 'number_four_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_five.png",
         enName: "five",
-        jpName: "ichi"),
+        jpName: "Go",
+        sound: 'number_five_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_six.png",
         enName: "six",
-        jpName: "ichi"),
+        jpName: "Roku",
+        sound: 'number_six_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_seven.png",
         enName: "seven",
-        jpName: "ichi"),
+        jpName: "Sebun",
+        sound: 'number_seven_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_eight.png",
         enName: "eight",
-        jpName: "ichi"),
+        jpName: "ichi",
+        sound: 'number_eight_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_nine.png",
         enName: "nine",
-        jpName: "ichi"),
+        jpName: "ichi",
+        sound: 'number_nine_sound.mp3'),
     Number(
         image: "assets/images/numbers/number_ten.png",
         enName: "ten",
-        jpName: "ichi"),
+        jpName: "ichi",
+        sound: 'number_ten_sound.mp3'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -89,7 +99,7 @@ class Numberspage extends StatelessWidget {
           // Item(number: numbers[9]),
           /*********************************************************************************************************/
 
-          // getlist(numbers),
+          // getlist(numbers),  >>>> use this method when you use a list view without children attribute and without listview.builder
 
           /*********************************************************************************************************/
         ),
