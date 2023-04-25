@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  runApp(Busniesscardapp());
+  runApp(Busniesscard());
 }
 
-class Busniesscardapp extends StatelessWidget {
-  const Busniesscardapp();
+class Busniesscard extends StatelessWidget {
+  const Busniesscard();
 
   @override
   Widget build(BuildContext context) {
