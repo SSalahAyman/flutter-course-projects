@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rolldiceapp/screens/home_page.dart';
+import 'package:rolldiceapp/screens/splash_screen.dart';
 
 void main() {
   runApp(RollDiceApp());
@@ -13,7 +14,7 @@ class RollDiceApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Rolldice",
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }
