@@ -10,8 +10,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: GradientContainer(),
+    return SafeArea(
+      child: Scaffold(
+        body: GradientContainer(
+          Color.fromARGB(255, 47, 4, 146),
+          Color.fromARGB(255, 45, 7, 98),
+        ),
+      ),
     );
   }
 }

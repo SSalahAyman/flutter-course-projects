@@ -14,14 +14,15 @@ class SplashScreen extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: AnimatedSplashScreen(
-        // time in milli seconds
+        /**
+           *time in mill seconds
+       */
         duration: 2600,
 
         /**
-       * Fade Animation Duration
+         * Fade Animation Duration
        */
         animationDuration: Duration(seconds: 1),
-
         splashIconSize: height,
         splash: Container(
           width: width,
