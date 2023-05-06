@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:languagelearningapp/components/item.dart';
-import 'package:languagelearningapp/models/number.dart';
+import 'package:languagelearningapp/components/list_item.dart';
+import 'package:languagelearningapp/models/item.dart';
 
 class Numberspage extends StatelessWidget {
   const Numberspage({super.key});
@@ -14,53 +14,53 @@ class Numberspage extends StatelessWidget {
   /*
       creating list of numbers and the values of this list type of Number class
      */
-  final List<Number> numbers = const [
-    Number(
+  final List<Item> numbers = const [
+    Item(
         image: "assets/images/numbers/number_one.png",
         enName: "one",
         jpName: "ichi",
         sound: 'number_one_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_two.png",
         enName: "two",
         jpName: "Ni",
         sound: 'number_two_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_three.png",
         enName: "three",
         jpName: "San",
         sound: 'number_three_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_four.png",
         enName: "four",
         jpName: "Shi",
         sound: 'number_four_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_five.png",
         enName: "five",
         jpName: "Go",
         sound: 'number_five_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_six.png",
         enName: "six",
         jpName: "Roku",
         sound: 'number_six_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_seven.png",
         enName: "seven",
         jpName: "Sebun",
         sound: 'number_seven_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_eight.png",
         enName: "eight",
         jpName: "ichi",
         sound: 'number_eight_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_nine.png",
         enName: "nine",
         jpName: "ichi",
         sound: 'number_nine_sound.mp3'),
-    Number(
+    Item(
         image: "assets/images/numbers/number_ten.png",
         enName: "ten",
         jpName: "ichi",
@@ -82,8 +82,9 @@ class Numberspage extends StatelessWidget {
           itemCount: numbers.length,
           itemBuilder: (context, index) {
             print(index);
-            return Item(
-              number: numbers[index],
+            return ListItem(
+              itemType: "numbers",
+              item: numbers[index],
             );
           },
 
@@ -107,10 +108,13 @@ class Numberspage extends StatelessWidget {
     );
   }
 
-  List<Widget> getlist(List<Number> numbers) {
+  List<Widget> getlist(List<Item> numbers) {
     List<Widget> itemslist = [];
     for (int i = 0; i < numbers.length; i++) {
-      itemslist.add(Item(number: numbers[i]));
+      itemslist.add(ListItem(
+        item: numbers[i],
+        itemType: "numbers",
+      ));
     }
     return itemslist;
   }

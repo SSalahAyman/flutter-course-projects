@@ -2,11 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import '../models/number.dart';
+import '../models/item.dart';
 
-class Item extends StatelessWidget {
-  const Item({super.key, required this.number});
-  final Number number;
+class ListItem extends StatelessWidget {
+  const ListItem({super.key, required this.item, required this.itemType});
+
+  final Item item;
+  final String itemType;
+
   static late double width;
   static late double height;
 
@@ -31,7 +34,7 @@ class Item extends StatelessWidget {
             width: width * 0.23,
             height: height * 0.111,
             color: const Color(0xfffff4db),
-            child: Image.asset(number.image),
+            child: Image.asset(item.image),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,14 +42,14 @@ class Item extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: width * 0.03),
                 child: Text(
-                  number.jpName,
+                  item.jpName,
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(left: width * 0.03),
                 child: Text(
-                  number.enName,
+                  item.enName,
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
@@ -60,8 +63,8 @@ class Item extends StatelessWidget {
               child: IconButton(
                   onPressed: () {
                     AudioCache player =
-                        AudioCache(prefix: 'assets/sounds/numbers/');
-                    player.play(number.sound);
+                        AudioCache(prefix: 'assets/sounds/$itemType/');
+                    player.play(item.sound);
                   },
                   icon: Icon(
                     Icons.play_arrow,
