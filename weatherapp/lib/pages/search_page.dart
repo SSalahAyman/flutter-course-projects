@@ -12,13 +12,27 @@ class SearchPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text(
+          title: const Text(
             "Search a city",
             style: TextStyle(color: Colors.white),
           ),
         ),
         body: Center(
-          child: TextField(),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: TextFormField(
+              decoration: InputDecoration(
+                suffixIcon: const Icon(Icons.search),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+                label: const Text("Search"),
+                hintText: "Enter City Name",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(18),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
