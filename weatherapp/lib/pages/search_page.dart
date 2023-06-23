@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+  SearchPage({super.key});
+  late String cityName;
   static late double width;
   static late double height;
   @override
@@ -20,7 +21,7 @@ class SearchPage extends StatelessWidget {
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: TextFormField(
+            child: TextField(
               decoration: InputDecoration(
                 suffixIcon: const Icon(Icons.search),
                 contentPadding:
@@ -31,6 +32,9 @@ class SearchPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                 ),
               ),
+              onSubmitted: (data) {
+                cityName = data;
+              },
             ),
           ),
         ),
