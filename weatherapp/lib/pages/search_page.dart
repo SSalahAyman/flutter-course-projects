@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/services/weather_service.dart';
 
 class SearchPage extends StatelessWidget {
   SearchPage({super.key});
@@ -34,6 +35,8 @@ class SearchPage extends StatelessWidget {
               ),
               onSubmitted: (data) {
                 cityName = data;
+                WeatherService weather = new WeatherService();
+                weather.getWeather(cityName: cityName);
               },
             ),
           ),
