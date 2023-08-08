@@ -13,8 +13,8 @@ class WeatherModel {
       this.weatherStateName});
 
   /*
-       * named constructor (fromJson) is specalized to build the object from Weathermodel class with data get from API
-      */
+    * named constructor (fromJson) is specalized to build the object from Weathermodel class with data get from API
+  */
   WeatherModel.fromJson(dynamic data) {
     var jsonData = data["forecast"]["forecastday"][0]["day"];
     date = data["location"]["localtime"];

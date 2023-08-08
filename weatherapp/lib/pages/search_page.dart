@@ -7,6 +7,9 @@ class SearchPage extends StatelessWidget {
   late String cityName;
   static late double width;
   static late double height;
+
+  GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -21,26 +24,37 @@ class SearchPage extends StatelessWidget {
           ),
         ),
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: TextField(
-              decoration: InputDecoration(
-                suffixIcon: const Icon(Icons.search),
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
-                label: const Text("Search"),
-                hintText: "Enter City Name",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(18),
+          child: Form(
+            key: _formKey,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: TextFormField(
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your city';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  suffixIcon: const Icon(Icons.search),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+                  label: const Text("Search"),
+                  hintText: "Enter City Name",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  ),
                 ),
+                onFieldSubmitted: (data) async {
+                  if (_formKey.currentState!.validate()) {
+                    cityName = data;
+                    WeatherService service = new WeatherService();
+                    WeatherModel weather =
+                        await service.getWeather(cityName: cityName);
+                    print(weather);
+                  }
+                },
               ),
-              onSubmitted: (data) async {
-                cityName = data;
-                WeatherService service = new WeatherService();
-                WeatherModel weather =
-                    await service.getWeather(cityName: cityName);
-                print(weather);
-              },
             ),
           ),
         ),

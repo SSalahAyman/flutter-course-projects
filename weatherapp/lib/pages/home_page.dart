@@ -54,6 +54,7 @@ class HomePage extends StatelessWidget {
                   ],
                 )
               : Container(
+                  color: Colors.orange,
                   width: width,
                   height: height,
                   child: Column(
